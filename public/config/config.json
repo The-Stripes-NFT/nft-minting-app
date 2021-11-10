@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xf8f5712a68c5599bcc67ac98addf102dcfb05d43",
-  "SCAN_LINK": "https://mumbai.polygonscan.com/token/0xf8f5712a68c5599bcc67ac98addf102dcfb05d43",
+  "CONTRACT_ADDRESS": "0xefe4dc236e7db32c6c98e826c335a016d5e734c7",
+  "SCAN_LINK": "https://mumbai.polygonscan.com/token/0xefe4dc236e7db32c6c98e826c335a016d5e734c7",
   "NETWORK": {
     "NAME": "Polygon",
     "SYMBOL": "Matic",
@@ -10,9 +10,9 @@
   "SYMBOL": "TSNFT",
   "MAX_SUPPLY": 992,
   "WEI_COST": 5000000000000000,
-  "DISPLAY_COST": 40,
+  "DISPLAY_COST": 4,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/the-stripes-nft",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/stripes-nft",
   "SHOW_BACKGROUND": true
 }
