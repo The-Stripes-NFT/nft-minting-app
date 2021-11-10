@@ -99,8 +99,8 @@ Also remember to update the short_name and name fields in the `public/manifest.j
 
 ```json
 {
-  "short_name": "NCC",
-  "name": "Coder Clone NFT"
+  "short_name": "TSNFT",
+  "name": "The Stripes NFT"
 }
 ```
 
