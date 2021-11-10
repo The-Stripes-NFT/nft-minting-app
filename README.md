@@ -8,8 +8,6 @@ To find out more please visit:
 
 [📺 YouTube](https://www.youtube.com/AliSolanki)
 
-[👄 Discord](https://discord.gg/MAgUqf7vFk)
-
 [💬 Telegram](https://t.me/studentsamaj)
 
 [🐦 Twitter](https://twitter.com/thestripesnft)
@@ -101,8 +99,8 @@ Also remember to update the short_name and name fields in the `public/manifest.j
 
 ```json
 {
-  "short_name": "NCC",
-  "name": "Coder Clone NFT"
+  "short_name": "TSNFT",
+  "name": "The Stripes NFT"
 }
 ```
 
