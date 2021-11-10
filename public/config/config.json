@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xf8f5712a68c5599bcc67ac98addf102dcfb05d43",
+  "SCAN_LINK": "https://mumbai.polygonscan.com/token/0xf8f5712a68c5599bcc67ac98addf102dcfb05d43",
+  "NETWORK": {
+    "NAME": "Polygon",
+    "SYMBOL": "Matic",
+    "ID": 137
+  },
+  "NFT_NAME": "The Stripes NFT",
+  "SYMBOL": "TSNFT",
+  "MAX_SUPPLY": 992,
+  "WEI_COST": 5000000000000000,
+  "DISPLAY_COST": 40,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/the-stripes-nft",
+  "SHOW_BACKGROUND": true
+}
