@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xefe4dc236e7db32c6c98e826c335a016d5e734c7",
-  "SCAN_LINK": "https://polygonscan.com/token/0xefe4dc236e7db32c6c98e826c335a016d5e734c7",
+  "CONTRACT_ADDRESS": "0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
+  "SCAN_LINK": "https://polygonscan.com/token/0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
   "NETWORK": {
     "NAME": "Polygon",
     "SYMBOL": "Matic",
@@ -13,6 +13,6 @@
   "DISPLAY_COST": 4,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/stripes-nft",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
   "SHOW_BACKGROUND": true
 }
