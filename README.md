@@ -8,8 +8,6 @@ To find out more please visit:
 
 [📺 YouTube](https://www.youtube.com/AliSolanki)
 
-[👄 Discord](https://discord.gg/MAgUqf7vFk)
-
 [💬 Telegram](https://t.me/studentsamaj)
 
 [🐦 Twitter](https://twitter.com/thestripesnft)
