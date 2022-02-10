@@ -9,10 +9,10 @@
 - Start server with `yarn start`
 
 ### Submission Requirements
-Link to PR: https://github.com/The-Stripes-NFT/nft-minting-app/pull/7
-Link to YouTube demo: https://youtu.be/exIoAZnCmEg
+- Link to PR: https://github.com/The-Stripes-NFT/nft-minting-app/pull/7
+- Link to YouTube demo: https://youtu.be/exIoAZnCmEg
 
-Discord ID: Alex_#7909
-UD Registered email address: eddieikott@gmail.com
+- Discord ID: Alex_#7909
+- UD Registered email address: eddieikott@gmail.com
 
 Link to Login with Unstoppable docs: https://docs.unstoppabledomains.com/login-with-unstoppable/high-level-overview
