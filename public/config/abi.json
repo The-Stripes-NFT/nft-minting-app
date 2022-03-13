@@ -1,7 +1,7 @@
 [
 	{
 		"anonymous": false,
-		"inputs": [
+		"inputs": [123
 			{
 				"indexed": true,
 				"internalType": "address",
