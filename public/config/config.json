@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
-  "SCAN_LINK": "https://polygonscan.com/token/0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
+  "CONTRACT_ADDRESS": "0xc7F2dD070877f1151a29DEc0FcDcA6b482fA6D44",
+  "SCAN_LINK": "https://ftmscan.com/address/0xc7F2dD070877f1151a29DEc0FcDcA6b482fA6D44",
   "NETWORK": {
-    "NAME": "Polygon",
-    "SYMBOL": "Matic",
-    "ID": 137
+    "NAME": "Fantom",
+    "SYMBOL": "FTM",
+    "ID": 250
   },
-  "NFT_NAME": "The Stripes NFT",
-  "SYMBOL": "TSNFT",
-  "MAX_SUPPLY": 992,
-  "WEI_COST": 4000000000000000000,
-  "DISPLAY_COST": 4,
+  "NFT_NAME": "Fantom Agents",
+  "SYMBOL": "FTMAGENTS",
+  "MAX_SUPPLY": 5000,
+  "WEI_COST": 50000000000000000000,
+  "DISPLAY_COST": 50,
   "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
+  "MARKETPLACE": "Paintswap",
+  "MARKETPLACE_LINK": "https://paintswap.finance/marketplace/collections/0xc7f2dd070877f1151a29dec0fcdca6b482fa6d44",
   "SHOW_BACKGROUND": true
 }

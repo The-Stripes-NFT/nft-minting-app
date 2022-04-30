@@ -1,4 +1,4 @@
-# Welcome to The Stripes NFT 💎
+# Welcome to testing 123 💎
 
 ![](https://github.com/The-Stripes-NFT/nft-minting-app/blob/main/logo-blob.png)
 
