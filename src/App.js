@@ -207,7 +207,7 @@ function App() {
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+            
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -249,7 +249,7 @@ function App() {
             >
               <StyledButton
                 onClick={(e) => {
-                  window.open("/config/roadmap.pdf", "_blank");
+                  window.open(CONFIG.MBZ_ROADMAP, "_blank");
                 }}
                 style={{
                   margin: "5px",
@@ -291,8 +291,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  Whitelist Sale : 0.1 ETH <br/> Public Sale: 0.2 ETH
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
@@ -401,7 +400,7 @@ function App() {
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
               alt={"example"}
-              src={"/config/images/example.gif"}
+              src={"/config/images/logo.png"}
               style={{ transform: "scaleX(-1)" }}
             />
           </s.Container>
