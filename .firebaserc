@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "whitelist-d1663"
+  },
+  "targets": {
+    "whitelist-d1663": {
+      "hosting": {
+        "to": [
+          "metabuildz-mint.web.app"
+        ]
+      }
+    }
+  }
+}

@@ -1,19 +1,20 @@
 {
-  "CONTRACT_ADDRESS": "0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
-  "SCAN_LINK": "https://polygonscan.com/token/0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
-  "NETWORK": {
-    "NAME": "Ethereum",
-    "SYMBOL": "ETH",
-    "ID": 137
-  },
-  "NFT_NAME": "Metabuildz",
-  "SYMBOL": "MBZ",
-  "MAX_SUPPLY": 10000,
-  "WEI_COST": 4000000000000000000,
-  "DISPLAY_COST": 4,
-  "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/Metabuildz",
-  "SHOW_BACKGROUND": false,
-  "MBZ_ROADMAP": "https://metabuildz.com/roadmap-1"
-}
+    "CONTRACT_ADDRESS": "0xe7314d1620876816e099faca1cedd2d105180658",
+    "SCAN_LINK": "https://rinkeby.etherscan.io/token/0xe7314d1620876816e099faca1cedd2d105180658",
+    "NETWORK": {
+      "NAME": "Ethereum",
+      "SYMBOL": "ETH",
+      "ID": 1
+    },
+    "NFT_NAME": "Metabuildz",
+    "SYMBOL": "MBZ",
+    "MAX_SUPPLY": 4888,
+    "WEI_COST": 4000000000000000000,
+    "DISPLAY_COST": 4,
+    "GAS_LIMIT": 285000,
+    "MARKETPLACE": "Opeansea",
+    "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/metabuildz-v-2",
+    "SHOW_BACKGROUND": false,
+    "MBZ_ROADMAP": "https://metabuildz.com/roadmap-1"
+  }
+  

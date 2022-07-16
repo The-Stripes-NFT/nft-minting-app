@@ -49,6 +49,7 @@ export const connect = () => {
     });
     const CONFIG = await configResponse.json();
     const { ethereum } = window;
+
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
     if (metamaskIsInstalled) {
       Web3EthContract.setProvider(ethereum);
@@ -57,9 +58,17 @@ export const connect = () => {
         const accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
+
+        // console.log("blackchain-account", accounts);
+        // CONFIG.CONTRACT_ADDRESS=accounts[0];
+        // CONFIG.SCAN_LINK="https://polygonscan.com/token/" + `${accounts[0]}`;
+        // console.log("CONFIG", CONFIG);
+        
         const networkId = await ethereum.request({
           method: "net_version",
         });
+        console.log("networkId", networkId);
+
         if (networkId == CONFIG.NETWORK.ID) {
           const SmartContractObj = new Web3EthContract(
             abi,
@@ -70,6 +79,7 @@ export const connect = () => {
               account: accounts[0],
               smartContract: SmartContractObj,
               web3: web3,
+              isConnnected: true,
             })
           );
           // Add listeners start

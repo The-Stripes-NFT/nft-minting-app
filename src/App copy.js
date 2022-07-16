@@ -1,17 +1,100 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {CButton, CCol, CFormGroup, CInput, CRow, CSelect } from '@coreui/react';
 import { connect, connectSuccess } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
-import Select from 'react-select';
-import FontAwesomes from "./Fonts";
 
 const truncate = (input, len) => {
   if(input !== null)
     input.length > len ? `${input.substring(0, len)}...` : input;
 }
+
+export const StyledButton = styled.button`
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--secondary);
+  padding: 10px;
+  font-weight: bold;
+  color: var(--secondary-text);
+  width: 100px;
+  cursor: pointer;
+  box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  :active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+`;
+
+export const StyledRoundButton = styled.button`
+  padding: 10px;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--primary);
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--primary-text);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  -webkit-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  :active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+`;
+
+export const ResponsiveWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: stretched;
+  align-items: stretched;
+  width: 100%;
+  @media (min-width: 767px) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledLogo = styled.img`
+  width: 200px;
+  @media (min-width: 767px) {
+    width: 300px;
+  }
+  transition: width 0.5s;
+  transition: height 0.5s;
+`;
+
+export const StyledImg = styled.img`
+  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
+  border: 4px dashed var(--secondary);
+  background-color: var(--accent);
+  border-radius: 100%;
+  width: 200px;
+  @media (min-width: 900px) {
+    width: 250px;
+  }
+  @media (min-width: 1000px) {
+    width: 300px;
+  }
+  transition: width 0.5s;
+`;
+
+export const StyledLink = styled.a`
+  color: var(--secondary);
+  text-decoration: none;
+`;
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +104,7 @@ function App() {
   const [defaultAccount, setDefaultAccount] = useState("");
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [mintAmount, setMintAmount] = useState(0.1);
-  const [mintCount, setMintCount] = useState(1);
+  const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -79,8 +161,7 @@ function App() {
     if (newMintAmount < 1) {
       newMintAmount = 1;
     }
-    setMintAmount(parseFloat(mintAmount) - parseFloat("0.10"));
-    setMintCount(mintCount - 1);
+    setMintAmount(newMintAmount);
   };
 
   const incrementMintAmount = () => {
@@ -89,8 +170,7 @@ function App() {
     if (newMintAmount > 50) {
       newMintAmount = 50;
     }
-    setMintAmount(parseFloat(mintAmount) + parseFloat("0.10"));
-    setMintCount(mintCount + 1);
+    setMintAmount(newMintAmount);
   };
 
   const getData = () => {
@@ -108,10 +188,9 @@ function App() {
       },
     });
     let config = await configResponse.json();
-    // config.CONTRACT_ADDRESS = defaultAccount;
-    // config.SCAN_LINK=`https://polygonscan.com/token/${defaultAccount}`;
+    config.CONTRACT_ADDRESS = defaultAccount;
+    config.SCAN_LINK=`https://polygonscan.com/token/${defaultAccount}`;
     SET_CONFIG(config);
-    setDefaultAccount(config.CONTRACT_ADDRESS);
   };
 
   const handleConnect = async (e) => {
@@ -125,7 +204,7 @@ function App() {
     if(window.ethereum){
       window.ethereum.request({method:'eth_requestAccounts'})
       .then(result => {
-        //setDefaultAccount(result[0]);
+        setDefaultAccount(result[0]);
         console.log("eth_requestAccounts",result);
         setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
         setClaimingNft(true);
@@ -136,7 +215,7 @@ function App() {
   }
 
   const formatDisplay = (id) => {
-    //console.log("account", id);
+    console.log("account", id);
     return `${id.substring(0,6)  + _maskInput(id.substring(7, id.length), '*', 4) }`
   }
 
@@ -173,11 +252,11 @@ function App() {
           // backgroundImage: `url(${"https://gifer.com/embed/O7o1"})` 
         }}
       >        
-        <s.ResponsiveWrapper 
+        <ResponsiveWrapper 
           flex={1} 
           style={{ 
             backgroundColor:"transparent" ,
-            height: "100%",
+            height: "100vh",
             width:"100%", 
           }} 
           >
@@ -193,7 +272,7 @@ function App() {
               backgroundPosition:"center",
               backgroundRepeat:"no-repeat",
               backgroundSize: "cover",
-              backgroundImage:`url(${"/config/images/logo4.jpeg"})` // "/config/images/logo.png"
+              backgroundImage:`url(${"/config/images/logo1.png"})` // "/config/images/logo.png"
             }}
           >
           <s.TextTitle
@@ -225,14 +304,14 @@ function App() {
             <s.TextDescription
               style={{ textAlign: "center", color: "var(--accent-text)" }}
             >
-              {formatDisplay(CONFIG.CONTRACT_ADDRESS)}
+              {formatDisplay(defaultAccount)}
             </s.TextDescription>
             <span
               style={{
                 textAlign: "center",
               }}
             >
-              <s.StyledButton
+              <StyledButton
                 onClick={(e) => {
                   window.open(CONFIG.MBZ_ROADMAP, "_blank");
                 }}
@@ -241,8 +320,8 @@ function App() {
                 }}
               >
                 Roadmap
-              </s.StyledButton>
-              <s.StyledButton
+              </StyledButton>
+              <StyledButton
                 style={{
                   margin: "5px",
                 }}
@@ -251,7 +330,7 @@ function App() {
                 }}
               >
                 {CONFIG.MARKETPLACE}
-              </s.StyledButton>
+              </StyledButton>
             </span>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -285,11 +364,11 @@ function App() {
                   Excluding gas fees.
                 </s.TextDescription>
                 <s.SpacerSmall />
-                <s.StyledButton
+                <StyledButton
                   onClick={handleConnect}
                 >
                 { blockchain.account !== null ? "CONNECTED" : "CONNECT"}
-                </s.StyledButton>
+                </StyledButton>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
@@ -319,45 +398,59 @@ function App() {
                   </s.Container>
                 ) : (
                   <>
+                    <s.TextDescription
+                      style={{
+                        textAlign: "center",
+                        color: "var(--accent-text)",
+                      }}
+                    >
+                      {feedback}
+                    </s.TextDescription>
                     <s.SpacerMedium />
-                    <s.MintingView>
-                          <CButton 
-                            style={{"width":"30px", "height":"40px"}}
-                            disabled={ mintCount === 3}
-                            onClick={ incrementMintAmount }>
-                            +
-                          </CButton>
-                          <CInput 
-                            style={{"width":"40px", "height":"40px", "textAlign":"center"}}
-                            value={ mintCount }
-                          />
-                          <CButton 
-                            style={{"width":"30px", "height":"40px"}}
-                            disabled={ mintCount === 1}
-                            onClick={decrementMintAmount}>
-                            -
-                          </CButton>
-
-                          <s.StyledButton
-
-                            padding="10px"
-                            style={{"width":"150px",
-                            "backgroundColor":"skyblue",
-                            }}
-                            disabled={claimingNft ? 1 : 0}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              claimNFTs();
-                              getData();
-                            }}>
-                              <FontAwesomes icon="faDiamond" size="sm" style={{ marginRight: 5}} />
-                            {`Mint (${ parseFloat(mintAmount.toFixed(2))} ETH)`}
-                          </s.StyledButton>
-
-
-
-                    </s.MintingView>
+                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                      <StyledRoundButton
+                        style={{ lineHeight: 0.4 }}
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          decrementMintAmount();
+                        }}
+                      >
+                        -
+                      </StyledRoundButton>
+                      <s.SpacerMedium />
+                      <s.TextDescription
+                        style={{
+                          textAlign: "center",
+                          color: "var(--accent-text)",
+                        }}
+                      >
+                        {mintAmount}
+                      </s.TextDescription>
+                      <s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          incrementMintAmount();
+                        }}
+                      >
+                        +
+                      </StyledRoundButton>
+                    </s.Container>
                     <s.SpacerSmall />
+                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                      <StyledButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          claimNFTs();
+                          getData();
+                        }}
+                      >
+                        {claimingNft ? "BUSY" : "BUY"}
+                      </StyledButton>
+                    </s.Container>
                   </>
                 )}
               </>
@@ -365,7 +458,7 @@ function App() {
             <s.SpacerMedium />
           </s.Container>
           
-        </s.ResponsiveWrapper>
+        </ResponsiveWrapper>
 
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
