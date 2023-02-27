@@ -16,6 +16,8 @@ To find out more please visit:
 
 # The Stripes NFT minting dapp 🔥
 
+![](https://github.com/The-Stripes-NFT/nft-minting-app/blob/main/ss.png)
+
 This repo provides a nice and easy way for linking an existing NFT smart contract to this minting dapp. There are two ways of using this repo, you can go the simple route or the more complex one.
 
 The simple route is so simple, all you need to do is download the build folder on the release page and change the configuration to fit your needs. (Follow the video for a walk through).
